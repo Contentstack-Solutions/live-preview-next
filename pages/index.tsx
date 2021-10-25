@@ -44,11 +44,14 @@ const Home: NextPage = () => {
   });
 
   
+
+  let title = data.title;
+  let content = data.content;
   return (
 
     <div>
-      <h1>{data.title}</h1>
-      <p>{data.content}</p>
+      <h1>{title}</h1>
+      <p>{content}</p>
     </div>
   )
 }
