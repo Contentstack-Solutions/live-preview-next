@@ -1,16 +1,14 @@
 import type { NextPage } from 'next'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Contentstack from 'contentstack'
 import ContentstackLivePreview from '@contentstack/live-preview-utils';
 
-
 interface Data {
   [key: string]: any
 }
-
 
 const Home: NextPage = () => {
 
@@ -31,12 +29,8 @@ const Home: NextPage = () => {
 
   Query.fetch()
     .then(function success(entry) {
-      // console.log(entry.get('content')); // Retrieve field value by providing a field's uid
-      // console.log(entry.toJSON()); // Convert the entry result object to JSON
-      // setData(entry)
       setData(entry.toJSON())
     }, function error(err) {
-      // err object
     })
 
   ContentstackLivePreview.init({
@@ -46,12 +40,12 @@ const Home: NextPage = () => {
     },
   });
 
-  
-
   let title = data.title;
   let content = data.content;
-  return (
 
+  Stack.livePreviewQuery({hash: data.uid, content_type_uid:'example'});
+  console.log(data)
+  return (
     <div>
       <h1>{title}</h1>
       <p>{content}</p>
