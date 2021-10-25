@@ -7,11 +7,14 @@ import Contentstack from 'contentstack'
 import ContentstackLivePreview from '@contentstack/live-preview-utils';
 
 
+interface Data {
+  [key: string]: any
+}
 
 
 const Home: NextPage = () => {
 
-  const [data, setData] = useState<object>({});
+  const [data, setData] = useState<Data>({});
 
   const Stack = Contentstack.Stack({
     api_key: 'blt009fe0bb4e6daa0e',
