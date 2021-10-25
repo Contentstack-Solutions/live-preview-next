@@ -11,7 +11,7 @@ import ContentstackLivePreview from '@contentstack/live-preview-utils';
 
 const Home: NextPage = () => {
 
-  const [data, setData] = useState('');
+  const [data, setData] = useState<object>({});
 
   const Stack = Contentstack.Stack({
     api_key: 'blt009fe0bb4e6daa0e',
@@ -44,7 +44,6 @@ const Home: NextPage = () => {
   });
 
   
-
   return (
 
     <div>
