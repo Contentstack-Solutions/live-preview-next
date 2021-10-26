@@ -18,11 +18,11 @@ const Home: NextPage = () => {
     api_key: 'blt009fe0bb4e6daa0e',
     delivery_token: 'cs01296f24ea7819972e489b9c',
     environment: 'published',
-    // live_preview: {
-    //   management_token: 'cs9ce6ad6e15a707baa191658c',
-    //   enable: true,
-    //   host: 'api.contentstack.io',
-    // },
+    live_preview: {
+      management_token: 'cs9ce6ad6e15a707baa191658c',
+      enable: true,
+      host: 'api.contentstack.io',
+    },
   })
 
   const Query = Stack.ContentType('example').Entry("bltb573fdad58718c24");
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
   let content = data.content;
 
   Stack.livePreviewQuery({hash: data.uid, content_type_uid:'example'});
-  console.log(data)
+
   return (
     <div>
       <h1>{title}</h1>
