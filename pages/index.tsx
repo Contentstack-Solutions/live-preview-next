@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
 import { useState, useEffect } from 'react';
-import Contentstack from 'contentstack'
 import Stack, { onEntryChange } from "../utils"
-import {addEditableTags} from '@contentstack/utils'
 import ContentstackLivePreview from '@contentstack/live-preview-utils';
 
 interface Data {
@@ -21,7 +19,6 @@ const Home: NextPage = () => {
           .toJSON()
           .find()
 
-      addEditableTags(fetchedData[0][0], 'destinations', true)
       setData(fetchedData[0][0]);
   }
   useEffect(() => {
@@ -38,7 +35,7 @@ const Home: NextPage = () => {
   let title = data.title;
   let content = data.content;
 
-  Stack.livePreviewQuery({hash: data.uid, content_type_uid:'example'});
+  // Stack.livePreviewQuery({hash: data.uid, content_type_uid:'example'});
 
   return (
     <div>
